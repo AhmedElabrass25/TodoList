@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/list.png" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/sweetalert2.min.css" /><!-- sweetAlert2 library (Vip)-->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/toastr.min.css" /> <!-- toastr library (Vip)-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+      </head>
+      <body>
+        <!-- >>>>>>>>>>>>Loading Page>>>>>>>>>> -->
+        <div class="loading dFlex d-none">
+          <span class="loader"></span>
+        </div>
+        <section class="pt-2">
+        <!-- >>>>>>>>>>>>Progress Bar>>>>>>>>>> -->
+          <div class="progressTodo w-100 dFlex mb-3">
+            <div class="progressContent bg-light p-2 px-3">
+              <div class="w-100 dFlex justify-content-between">
+                <div class="leftSide w-100">
+                  <h5 class="mb-0">Todo App</h5>
+                  <span class="text-secondary small ps-2">Keep it up !</span>
+                </div>
+                <div class="rightSide dFlex">
+                  <span id="numOfCompletedTasks">0</span>
+                  <span>/</span>
+                  <span id="numOfTasks">0</span>
+                </div>
+              </div>
+              <div class="progressBar dFlex w-100">
+                <div class="bar"></div>
+              </div>
+            </div>
+          </div>
+          <div class="container w-100">
+            <!--<<<<<<<<<<<<<<< Todo list >>>>>>>>>>>>>>>> -->
+            <div class="row align-items-center flex-column w-100">
+              <div class="col-lg-8 col-md-10 col-12">
+                <div class="inputBox w-100 dFlex">
+                  <input
+                    type="text"
+                    id="todoInput"
+                    placeholder="Enter your task..."
+                    class="w-75 py-2 ps-3 me-2"
+                  />
+                  <button id="addBtn" class="btn btn-primary py-2 w-25">
+                    Add
+                  </button>
+                </div>
+                <p id="errorMsg" class="alert alert-danger d-none">
+                  Enter your task................!
+                </p>
+              </div>
+              <div class="col-lg-7 col-md-9 col-12">
+                <ul id="taskContainer" class="w-100">
+                  <!--  -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </body>
+    </html>
+    <script src="js/all.min.js"></script>
+    <script src="js/jquery.min.js"></script><!-- jquery library should call it before toastr and sweetAlert2-->
+    <script src="js/sweetalert2.all.min.js"></script><!-- sweetAlert2 library (Vip)-->
+    <script src="js/toastr.min.js"></script><!-- toastr library (Vip)-->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

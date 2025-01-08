@@ -1,0 +1,191 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* >>>>>>>>>>>>>
+>>>>>><<<<<<<<<<Spinner
+>>>>>>>>>>>> */
+.loading {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+  background-color: #22222218;
+}
+.loader {
+  width: 60px;
+  height: 60px;
+  border: 3px solid #6f9dd5;
+  box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 3px solid;
+  border-color: #ff3d00 transparent;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* >>>>>>>>>>>>>
+>>>>>><<<<<<<<<<Spinner
+>>>>>>>>>>>> */
+
+.dFlex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-image: url("../images/todobg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+}
+/* >>>>>>>>>>>>>>>>>>>
+><<<<<<<<<<<<>>>>>>>>>>Todo List
+>>>>>>>>>> */
+.container .row {
+  margin-left: 0 !important;
+}
+.inputBox {
+  margin-bottom: 30px;
+  background-color: #fff;
+  padding: 15px 25px;
+  border-radius: 6px;
+  border: 5px solid #e6e5e55f;
+}
+.inputBox input {
+  border: 1px solid rgba(211, 211, 211, 0.45);
+  border-radius: 6px;
+}
+.inputBox input:focus {
+  border: 1px solid lightgray;
+  box-shadow: none !important;
+  outline: none !important;
+}
+ul {
+  height: 55vh;
+  overflow-y: auto;
+  list-style-type: none;
+  padding-left: 0px;
+  background-color: #fff;
+  padding: 30px 30px;
+  border-radius: 2px;
+  border: 5px solid #e6e5e581;
+}
+/* Customizing the scrollbar */
+/* Overall scrollbar */
+ul::-webkit-scrollbar {
+  width: 12px; /* Horizontal scrollbar width */
+  height: 10px; /* Vertical scrollbar height */
+  margin: 10px 0px;
+}
+
+/* Customizing the scrollbar thumb (the draggable part) */
+ul::-webkit-scrollbar-thumb {
+  background-color: #0d6efd;
+  margin: 0px 22px;
+}
+
+/* Customizing the scrollbar track (background) */
+ul::-webkit-scrollbar-track {
+  background-color: #bcbcbc96;
+  margin: 10px;
+}
+ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+ul li #deleteTask {
+  color: crimson;
+  cursor: pointer;
+}
+.completed {
+  text-decoration: line-through !important;
+  color: #757575 !important;
+}
+li .taskName {
+  cursor: pointer;
+  text-transform: capitalize;
+}
+button.delete-btn {
+  background-color: #ff4747;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button.delete-btn:hover {
+  background-color: #e04343;
+}
+/* >>>>>>>>>>>>>>>>>>>
+><<<<<<<<<<<<>>>>>>>>>>ProgressBar
+>>>>>>>>>> */
+.progressTodo .progressContent {
+  width: 65% !important;
+  opacity: 0.9;
+  border-radius: 6px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+  border: 4px solid #c7d0f763;
+}
+.progressTodo .progressContent .rightSide {
+  gap: 3px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #0667f9;
+  color: white;
+  border: 2px solid #ffffffd5;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+.progressTodo .progressBar {
+  margin-top: 10px;
+  height: 12px;
+  background-color: #0d6dfd96;
+  justify-content: flex-start;
+  padding: 0px 2px;
+  border-radius: 6px;
+}
+.progressTodo .progressBar .bar {
+  width: 0%;
+  background-color: #0156d7;
+  height: 8px;
+  transition: width 0.6s ease;
+  border-radius: 6px;
+}
